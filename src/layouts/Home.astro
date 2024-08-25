@@ -1,0 +1,65 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<!-- Inicio -->
+<html lang="en" class="h-full w-full">
+  <head>
+    <title>{title}</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  </head>
+  <body
+    class="flex flex-col h-full w-full dark:bg-zinc-900 bg-zinc-50 dark:text-zinc-100">
+    <nav class="border-b dark:bg-zinc-800 dark:border-zinc-700">
+      <div class="flex items-baseline justify-end sm:justify-between p-4 max-w-screen-xl mx-auto">
+        <a href="/" class="hidden sm:block font-semibold dark:text-white">Inicio</a>
+        <div>
+          <ul class="font-medium flex items-baseline gap-8">
+            <li>
+              <li>
+                <a href="/signin" class="block text-zinc-900 dark:text-gray-200">Inicio de Seccion</a>
+              </li>
+              <a href="/register" class="block text-zinc-900 dark:text-gray-200">Registrarse</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+	body {
+		margin: auto;
+		/* max-width: 1200px; */
+	}
+</style>
